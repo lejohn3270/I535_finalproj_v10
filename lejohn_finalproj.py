@@ -8,19 +8,19 @@ Original file is located at
 """
 
 import pandas as pd
-cows_2021=pd.read_csv("gs://lejohn_finalproj/Ohio Dairy_2021.csv",dtype={'State ANSI':object,'County ANSI':object})
 cows_2022=pd.read_csv("gs://lejohn_finalproj/Ohio_Dairy_2022.csv",dtype={'State ANSI':object,'County ANSI':object})
+cows_2023=pd.read_csv("gs://lejohn_finalproj/Ohio_Dairy_2023.csv",dtype={'State ANSI':object,'County ANSI':object})
 
-cows_2021.dropna(subset='CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>',inplace=True)
 cows_2022.dropna(subset='CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>',inplace=True)
+cows_2023.dropna(subset='CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>',inplace=True)
 
-cows_2021.drop(cows_2021.loc[cows_2021['CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>']==' (D)'].index,inplace=True)
 cows_2022.drop(cows_2022.loc[cows_2022['CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>']==' (D)'].index,inplace=True)
+cows_2023.drop(cows_2023.loc[cows_2023['CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>']==' (D)'].index,inplace=True)
 
-cows_2021['CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>'].replace(',','',inplace=True,regex=True)
 cows_2022['CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>'].replace(',','',inplace=True,regex=True)
+cows_2023['CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>'].replace(',','',inplace=True,regex=True)
 
-cows_total=cows_2021.merge(cows_2022,on='County ANSI')
+cows_total=cows_2022.merge(cows_2023,on='County ANSI')
 
 cows_total.rename(columns={"CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>_x":'Dairy_Cows_x'},inplace=True)
 cows_total.rename(columns={"CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>_y":'Dairy_Cows_y'},inplace=True)
