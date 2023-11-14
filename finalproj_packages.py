@@ -9,3 +9,12 @@ Original file is located at
 
 import os
 os.system('pip install plotly-geo')
+os.system('pip install pyshp')
+os.system('pip install shapely==1.8.5')
+os.system('pip install uvicorn')
+os.system('pip install python-multipart')
+os.system('pip install matplotlib')
+os.system('pip install geopandas')
+os.system('pip install google-cloud-storage')
+os.system('pip install fastapi')
+os.system('pip install -U kaleido')
