@@ -26,7 +26,7 @@ cows_total.rename(columns={"CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>_x":'
 cows_total.rename(columns={"CATTLE, COWS, MILK - INVENTORY  -  <b>VALUE</b>_y":'Dairy_Cows_y'},inplace=True)
 cows_total['FIPS']=cows_total['State ANSI_x']+cows_total['County ANSI']
 cows_total.dropna(axis=0,subset='FIPS',inplace=True)
-cows_total.to_csv('cows_total')
+cows_total.to_csv('cows_total.csv')
 
 import plotly.figure_factory as ff
 from matplotlib import pyplot as plt
