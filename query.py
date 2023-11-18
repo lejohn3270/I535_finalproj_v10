@@ -7,11 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1LSDiKifRblNb7MiGTcyPV6u1M6myLVUg
 """
 import os
-from google.colab import auth
-auth.authenticate_user()
-project_id = 'fa23-i535-lejohn-finalproj'
-os.system('!gcloud config set project {project_id}')
-
 from google.cloud import bigquery
 
 
