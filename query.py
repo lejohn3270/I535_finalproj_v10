@@ -33,5 +33,5 @@ rows = query_job.result()  # Waits for query to finish
 df=query_job.to_dataframe()
 df.to_excel('Query.xlsx')
 
-os.system("!gsutil cp 'Query.xlsx' 'gs://lejohn_finalproj/'")
+#!gsutil cp 'Query.xlsx' 'gs://lejohn_finalproj/'
 
