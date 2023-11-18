@@ -40,5 +40,3 @@ df.to_excel('Query.xlsx')
 
 !gsutil cp 'Query.xlsx' 'gs://lejohn_finalproj/'
 
-pip install google.cloud
-
