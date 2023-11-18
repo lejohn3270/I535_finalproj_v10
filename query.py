@@ -7,13 +7,13 @@ Original file is located at
     https://colab.research.google.com/drive/1LSDiKifRblNb7MiGTcyPV6u1M6myLVUg
 """
 import os
-os.system('pip install google.colab')
+os.system('pip install google-colab')
 from google.colab import auth
 auth.authenticate_user()
 project_id = 'fa23-i535-lejohn-finalproj'
 os.system('!gcloud config set project {project_id}')
 
-os.system('pip install google.cloud')
+os.system('pip install google-cloud')
 from google.cloud import bigquery
 
 
